@@ -29,6 +29,9 @@
                             @click="isEditing = true">
                             Edit
                         </button>
+                        <DropdownLink as="button" :href="route('chirps.destroy', chirp.id)" method="delete">
+                            Delete
+                        </DropdownLink>
                     </template>
                 </Dropdown>
             </div>
@@ -55,6 +58,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import dayjs from 'dayjs';
 import {useForm} from "@inertiajs/vue3";
 import {ref} from "vue";
+import DropdownLink from '@/Components/DropdownLink.vue';
 
 dayjs.extend(relativeTime);
 
